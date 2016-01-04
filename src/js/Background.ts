@@ -6,8 +6,10 @@ import { IOptions } from "./IOptions";
 
 let _patterns: RegExp[] = [];
 
-function compile(patterns: string[]) {
-    _patterns = patterns.map((v: string) => new RegExp(v));
+function compile(patterns: string[]): void {
+    _patterns = patterns
+        .filter((v: string) => v !== "")
+        .map((v: string) => new RegExp(v));
     console.log("Compiled patterns...", patterns);
 }
 
