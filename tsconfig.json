@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "experimentalDecorators": true,
+    "diagnostics": true,
+    "noImplicitAny": true,
+    "outDir": "dist/js/",
+    "sourceMap": true
+  },
+  "files": [
+    "src/js/Background.ts",
+    "src/js/Options.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

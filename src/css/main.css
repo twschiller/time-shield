@@ -1,0 +1,39 @@
+
+.nudge {
+    width: 500px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nudge table {
+    padding: 5px;
+    border: 1px solid;
+}
+
+.nudge td {
+    padding: 3px;
+}
+
+.nudge thead {
+    font-weight: bold;
+}
+
+.options {
+    width: 500px;
+}
+
+.options textarea {
+    width: 500px;
+    height: 300px;
+    resize: none;
+    overflow-y: scroll;
+}
+
+.options .status {
+    color: darkgreen;
+}
+
+.toolbar > div {
+    display: inline-block;
+}

@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Time Shield",
+  "version": "0.1",
+  "description": "Smarter procrastination management.",
+  "background": {
+    "scripts": ["js/Background.js"],
+    "persistent": true
+  },
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "web_accessible_resources": [
+    "templates/*",
+    "styles/*",
+    "js/*"
+  ],
+  "options_ui": {
+    "page": "html/options.html",
+    "chrome_style": true
+  }
+}

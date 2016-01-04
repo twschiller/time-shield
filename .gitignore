@@ -1,0 +1,15 @@
+# IDE files
+.idea
+.DS_Store
+
+# Caches
+.tscache
+
+# generated files
+dist
+src/js/.baseDir.ts
+*.tmp.txt
+
+# managed dependencies
+typings
+node_modules
