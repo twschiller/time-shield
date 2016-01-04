@@ -3,5 +3,5 @@ node_js: "node"
 sudo: false
 before_script:
   - npm install -g grunt-cli
-script:
-  - grunt dist
+before_script:
+  - grunt build
