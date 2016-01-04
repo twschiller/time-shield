@@ -1,5 +1,7 @@
 ## Time Shield
 
+[![Build Status](https://travis-ci.org/twschiller/time-shield.svg?branch=master)](https://travis-ci.org/twschiller/time-shield)
+
 Smarter procrastination management for Chrome.
 
 Advantages:

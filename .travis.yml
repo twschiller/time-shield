@@ -3,5 +3,9 @@ node_js: "node"
 sudo: false
 before_install:
   - npm install -g grunt-cli
+  - npm install -g tsd
+install:
+  - npm install
+  - tsd install
 before_script:
   - grunt build
