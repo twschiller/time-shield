@@ -4,8 +4,8 @@
     "experimentalDecorators": true,
     "diagnostics": true,
     "noImplicitAny": true,
-    "outDir": "dist/js/",
     "sourceMap": true,
+    "outDir": "../test-dist",
     "moduleResolution": "node"
   },
   "exclude": [

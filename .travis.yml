@@ -4,6 +4,8 @@ sudo: false
 before_install:
   - npm install -g grunt-cli
   - npm install -g tsd
+  - npm install -g ts-node
+  - npm install -g mocha
 install:
   - npm install
   - tsd install

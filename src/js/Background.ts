@@ -3,31 +3,22 @@
 import TabChangeInfo = chrome.tabs.TabChangeInfo;
 import Tab = chrome.tabs.Tab;
 import { IOptions } from "./IOptions";
+import { Patterns } from "./Patterns";
+import Monitor from "./Monitor";
 
-let _patterns: RegExp[] = [];
-
-function compile(patterns: string[]): void {
-    _patterns = patterns
-        .filter((v: string) => v !== "")
-        .map((v: string) => new RegExp(v));
-    console.log("Compiled patterns...", patterns);
-}
-
-chrome.storage.sync.get({ patterns: [] }, (items: IOptions) => {
-    compile(items.patterns);
+chrome.storage.sync.get({patterns: []}, (items: IOptions) => {
+    Monitor.patterns = Patterns.compile(items.patterns);
 });
 
 chrome.tabs.onUpdated.addListener((tabId: number, changeInfo: TabChangeInfo, tab: Tab) => {
-    const oldUrl = tab.url;
     const newUrl = chrome.extension.getURL("../html/nudge.html");
-
-    if (_patterns.some(r => oldUrl.match(r) !== null)) {
+    if (Monitor.match(tab.url)) {
         chrome.tabs.update(tabId, {url: newUrl});
     }
 });
 
 chrome.runtime.onMessage.addListener((request) => {
     if (request.patterns !== undefined) {
-        compile(request.patterns);
+        Monitor.patterns = Patterns.compile(request.patterns);
     }
 });

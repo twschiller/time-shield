@@ -5,6 +5,7 @@
 # Caches
 .tscache
 tmp
+test-dist
 
 # generated files
 dist

@@ -4,7 +4,7 @@
   "version": "0.1",
   "description": "Smarter procrastination management.",
   "background": {
-    "scripts": ["js/Background.js"],
+    "scripts": ["js/background.bundle.js"],
     "persistent": true
   },
   "icons": {

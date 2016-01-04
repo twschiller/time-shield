@@ -1,12 +1,11 @@
+"use strict";
+
+var path = require("path");
+
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
         manifest: grunt.file.readJSON("src/manifest.json"),
-        ts: {
-            dist: {
-                tsconfig: true
-            }
-        },
         copy: {
             dist: {
                 files: [
@@ -15,6 +14,33 @@ module.exports = function(grunt) {
                     {cwd: "src/html", src: ["**/*.html"], dest: "dist/html/", expand: true},
                     {cwd: "src/icons", src: ["**/*.png"], dest: "dist/icons/", expand: true}
                 ]
+            }
+        },
+        webpack: {
+            default: {
+                entry: {
+                    options: "./src/js/Options.ts",
+                    background: "./src/js/Background.ts"
+                },
+                output: {
+                    path: path.join(__dirname, "dist", "js"),
+                    filename: "[name].bundle.js"
+                },
+                resolve: {
+                    // https://github.com/TypeStrong/ts-loader
+                    // needed to resolve the typescript files during the compile
+                    extensions: ["", ".ts", ".tsx"],
+                    modulesDirectories: ["node_modules"]
+                },
+                module: {
+                    loaders: [
+                        {
+                            test: /\.tsx?$/,
+                            loaders: ["babel", "ts"],
+                            include: "./src"
+                        }
+                    ]
+                }
             }
         },
         crx: {
@@ -29,10 +55,10 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.loadNpmTasks("grunt-ts");
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-crx");
+    grunt.loadNpmTasks('grunt-webpack');
 
-    grunt.registerTask("build", ["ts", "copy"]);
+    grunt.registerTask("build", ["webpack", "copy"]);
     grunt.registerTask("package", ["build", "crx"]);
 };
