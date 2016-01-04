@@ -4,9 +4,11 @@
 
 # Caches
 .tscache
+tmp
 
 # generated files
 dist
+crx
 src/js/.baseDir.ts
 *.tmp.txt
 
