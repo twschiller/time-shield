@@ -1,21 +1,21 @@
 {
   "version": "v4",
-  "repo": "borisyankov/DefinitelyTyped",
+  "repo": "twschiller/DefinitelyTyped",
   "ref": "master",
   "path": "typings",
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "chrome/chrome.d.ts": {
-      "commit": "0d66537e353802f996a3f67ca1b711f63835f9e7"
+      "commit": "bdaf2f0eb19edee26248c80bab4947e9b70e4217"
     },
     "webrtc/MediaStream.d.ts": {
-      "commit": "0d66537e353802f996a3f67ca1b711f63835f9e7"
+      "commit": "f8fc4fdb9663c64061c3a72710d1d694ee72a4f1"
     },
     "filesystem/filesystem.d.ts": {
-      "commit": "0d66537e353802f996a3f67ca1b711f63835f9e7"
+      "commit": "bdaf2f0eb19edee26248c80bab4947e9b70e4217"
     },
     "filewriter/filewriter.d.ts": {
-      "commit": "0d66537e353802f996a3f67ca1b711f63835f9e7"
+      "commit": "bdaf2f0eb19edee26248c80bab4947e9b70e4217"
     },
     "node/node.d.ts": {
       "commit": "bdaf2f0eb19edee26248c80bab4947e9b70e4217"
