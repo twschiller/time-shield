@@ -7,7 +7,7 @@ Smarter procrastination management for Chrome.
 * Safe to use in incognito mode (open source, with no tracking)
 * Identify patterns *(Coming soon)*
 
-### How to build locally:
+### How to build locally
 
 1. Install Node.js, and make sure you have the most recent version of npm, the node package manager: https://docs.npmjs.com/getting-started/installing-node
 
